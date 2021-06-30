@@ -1,0 +1,22 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "JavaScript Master Class",
+  "scripts": {
+    "test:string": "mocha test/string-test",
+    "test:number": "mocha test/number-test",
+    "test:array": "mocha test/array-test",
+    "test:loops": "mocha test/loops-test",
+    "test:regex": "mocha test/regex-test"
+  },
+  "author": "VladSelikh",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "node-fetch": "^2.6.0",
+    "sinon": "latest",
+    "eslint": "^7.4.0",
+    "mocha-eslint": "^6.0.0"
+  }
+}

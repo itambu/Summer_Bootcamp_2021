@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript Master Class",
   "scripts": {
+    "test": "mocha",
     "test:string": "mocha test/string-test",
     "test:number": "mocha test/number-test",
     "test:array": "mocha test/array-test",

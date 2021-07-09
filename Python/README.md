@@ -2,7 +2,7 @@
 
 ## Настройка рабочего окружения
 
-### Для Windows: 
+### Установка Python для Windows: 
 
 1. Перейти на сайт python.org
 2. Навести курсор на вкладку Downloads.
@@ -15,6 +15,12 @@
    ![](.README_images/ee423a7a.png)
 6. Установить python. 
 7. Радоваться :)
+
+### Установка IDE на выбор
+
+* [PyCharm Community Edition(recommended)](https://www.jetbrains.com/ru-ru/pycharm/download/#section=linux)
+* [VS Code](https://code.visualstudio.com/docs/setup/setup-overview)
+* [Sublime Text](https://www.sublimetext.com/download)
 
 ## Список задач
 

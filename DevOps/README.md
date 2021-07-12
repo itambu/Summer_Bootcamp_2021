@@ -22,21 +22,28 @@
 # Tasks
 
 ## Задание 1
+ 
+- [Azure Fundamentals part 1: Describe core Azure concepts](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)
+- [Основы Azure, часть 1. Описание основных понятий Azure](https://docs.microsoft.com/ru-ru/learn/paths/az-900-describe-cloud-concepts/)
 
-- Пожалуйста, создай бесплатный триал аккаунт Azure, следуя инструкции:
-[RUS ver - Создание учетной записи Azure](https://docs.microsoft.com/ru-ru/learn/modules/create-an-azure-account)
-[ENG ver - Create an Azure account](https://docs.microsoft.com/en-us/learn/modules/create-an-azure-account)
-
-
-
-- Добавь тренеров в свою подписку с ролью Contributor
+- [Azure Fundamentals part 2: Describe core Azure services](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-core-azure-services/)
+- [Основы Azure, часть 2. Описание основных служб Azure](https://docs.microsoft.com/ru-ru/learn/paths/az-900-describe-core-azure-services/)
 
 ## Задание 2
 
-- Повтори увиденное на МК и позови тренеров для проверки.
-! Не забывай выключать виртуальные машины, когда с ними не работаешь, для экономии бюджета подписки.
+- [Create a Windows virtual machine in Azure](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/)
+- [Создание виртуальной машины Windows в Azure](https://docs.microsoft.com/ru-ru/learn/modules/create-windows-virtual-machine-in-azure/)
+
+- [Create a Linux virtual machine in Azure](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/)
+- [Создание виртуальной машины Linux в Azure](https://docs.microsoft.com/ru-ru/learn/modules/create-linux-virtual-machine-in-azure/)
+
+- [Add and size disks in Azure virtual machines](https://docs.microsoft.com/en-us/learn/modules/add-and-size-disks-in-azure-virtual-machines/)
+- [Изменение размера и добавление дисков на виртуальных машинах Azure](https://docs.microsoft.com/ru-ru/learn/modules/add-and-size-disks-in-azure-virtual-machines/)
 
 ## Задание 3
 
-- Настрой мониторинг для своей инфраструктуры 
-- Покажи пример логов и событий тренерам
+- [Manage virtual machines with the Azure CLI](https://docs.microsoft.com/en-us/learn/modules/manage-virtual-machines-with-azure-cli/)
+- [Управление виртуальными машинами с помощью Azure CLI](https://docs.microsoft.com/ru-ru/learn/modules/manage-virtual-machines-with-azure-cli/)
+
+- [Automate Azure tasks using scripts with PowerShell](https://docs.microsoft.com/en-us/learn/modules/automate-azure-tasks-with-powershell/)
+- [Автоматизация задач Azure с помощью сценариев PowerShell](https://docs.microsoft.com/ru-ru/learn/modules/automate-azure-tasks-with-powershell/)

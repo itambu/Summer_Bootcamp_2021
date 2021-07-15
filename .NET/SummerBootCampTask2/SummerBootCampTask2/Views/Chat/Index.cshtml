@@ -1,1 +1,72 @@
-﻿
+﻿@model SummerBootCampTask2.Models.ChatViewModel
+
+<h1>Чат</h1>
+@if (Model.Messages.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <p>Отправитель</p>
+                </th>
+                <th>
+                    <p>Получатель</p>
+                </th>
+                <th>
+                    <p>Сообщение</p>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Messages)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sender.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recipient.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message.Data)
+                    </td>
+                    <td>
+                        @if (Model.FriendId == item.Recipient.Id)
+                        {
+                            <a asp-controller="Message" asp-action="Edit" asp-route-id="@item.Message.Id">Изменить</a>
+                            <a asp-controller="Message" asp-action="Delete" asp-route-id="@item.Message.Id">Удалить</a>
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>У Вас пока нет сообщений с этим пользователем.</h2>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SendMessage">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="FriendId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Новое сообщение</label>
+                <input asp-for="NewMessage.Message.Data" class="form-control" />
+                <span asp-validation-for="NewMessage.Message.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Отправить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="User" asp-action="Index">К списку пользователей</a>
+</div>

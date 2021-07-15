@@ -7,12 +7,10 @@ namespace SummerBootCampTask2.Models
     {
         public int Id { get; set; }
 
-        public int FirstUserId { get; set; }
+        public int FriendId { get; set; }
 
-        public int SecondUserId { get; set; }
+        public IEnumerable<MessageViewModel> Messages { get; set; }
 
-        public IEnumerable<Message> Messages { get; set; }
-
-        public Message NewMessage { get; set; }
+        public MessageViewModel NewMessage { get; set; }
     }
 }

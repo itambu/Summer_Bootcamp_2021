@@ -15,7 +15,12 @@ namespace SummerBootCampTask2.Controllers
 
         public IActionResult Index()
         {
-            return View(dbContext.Users.ToList());
+            var users = dbContext.Users.ToList();
+            if (User.Identity.IsAuthenticated)
+            {
+                users = users.Where(x => x.Email != User.Identity.Name).ToList();
+            }
+            return View(users);
         }
     }
 }

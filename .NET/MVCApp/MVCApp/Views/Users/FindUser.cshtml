@@ -1,0 +1,54 @@
+﻿@model MVCApp.Models.FindUserViewModel
+
+<h3>Find user</h3>
+<form asp-action="FindUser" asp-controller="Users">
+    <div>
+        <div class="form-group">
+            <label asp-for="Identifier">Enter identifier</label>
+            <input asp-for="Identifier" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>
+
+    @if (!(Model is null))
+     {
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                    </th>
+                <tr />
+            </thead>
+            <tbody>
+                   <tr>
+                        <th>
+                            @Html.DisplayFor(u => Model.UserName)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(u => Model.Email)
+                        </th>
+                        @if (Model.isFriend)
+                        {
+                            <th>
+                                <b>This user is your friend!</b>
+                            </th>
+                        }
+                        else
+                        {
+                            <th>
+                                <a asp-controller="Friends" asp-action="SendRequest" asp-route-id="@Model.Id">Add as Friend</a>
+                            </th>
+                        }
+                   </tr>
+            </tbody>
+        </table>
+     }

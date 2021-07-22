@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ConfirmRequestViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Welcome</h1>
+    <p>Use the top bar to navigate the site!</p>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="text-center">
+        <a>Friend request from <b>@item.UserName</b> </a>
+        <div class="form-group">
+            <a asp-controller="Friends" asp-action="ConfirmRequest" asp-route-id="@item.Id">Confirm</a>
+        </div>
+    </div>
+}

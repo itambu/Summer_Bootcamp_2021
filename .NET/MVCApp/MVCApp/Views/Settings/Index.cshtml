@@ -1,0 +1,55 @@
+﻿@model MVCApp.Models.SettingsViewModel
+
+<h3>Settings Page</h3>
+<hr />
+<form asp-action="Index" asp-controller="Settings">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="form-group">
+            <div class="col-md-5">Your identifier is: <b>@Model.Identifier</b></div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-5">Your current user name is: <b>@Model.UserName</b></div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2" asp-for="UserName">Enter new user name</label>
+            <input class="col-md-2" asp-for="UserName" />
+            <span asp-validation-for="UserName" />
+        </div>
+        <div class="form-group col-md-10"><i>You don't need to change the password(leave the fields empty)</i></div>
+        <div class="form-group">
+            <label class="col-md-2" asp-for="NewPassword">Enter new password</label>
+            <input class="col-md-2" asp-for="NewPassword" />
+            <span asp-validation-for="NewPassword" />
+        </div>
+        <div class="form-group">
+            <label class="col-md-2" asp-for="ConfirmNewPassword">Enter new password again</label>
+            <input class="col-md-2" asp-for="ConfirmNewPassword" />
+            <span asp-validation-for="ConfirmNewPassword" />
+        </div>
+        <div class="form-group col-md-10">
+            <label asp-for="IsVisible">Can other users see you:</label>
+            @Html.CheckBoxFor(m => m.IsVisible, Model.IsVisible)
+            <span asp-validation-for="IsVisible" />
+        </div>
+        <hr />
+        <div class="form-group">
+            <label class="col-md-3" asp-for="Password"><b>To confirm, enter the old password</b></label>
+            <input class="col-md-2" asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-outline-dark" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-controller="Friends" asp-action="Index">Go to friends list</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

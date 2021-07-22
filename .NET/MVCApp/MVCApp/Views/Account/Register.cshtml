@@ -1,0 +1,38 @@
+﻿@model MVCApp.Models.RegisterViewModel
+
+<h3>Register Page</h3>
+<hr />
+<form asp-action="Register" asp-controller="Account">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="form-group">
+            <label class="col-md-2" asp-for="UserName">Enter your user name</label>
+            <input class="col-md-2" asp-for="UserName" />
+            <span asp-validation-for="UserName" />
+        </div>
+        <div class="form-group">
+            <label class="col-md-2" asp-for="Email">Enter Email</label>
+            <input class="col-md-2" asp-for="Email" />
+            <span asp-validation-for="Email" />
+        </div>
+        <div class="form-group">
+            <label class="col-md-2" asp-for="Password">Enter Password</label>
+            <input class="col-md-2" asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="form-group">
+            <label class="col-md-2" asp-for="ConfirmPassword">Enter password again</label>
+            <input class="col-md-2" asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword" />
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Register" class="btn btn-outline-dark" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

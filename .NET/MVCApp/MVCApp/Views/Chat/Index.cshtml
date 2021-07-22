@@ -1,0 +1,82 @@
+﻿@model MVCApp.Models.ChatViewModel
+
+<h1>Chat</h1>
+@if (Model.Messages.Any())
+ {
+    foreach (var m in Model.Messages)
+    {
+        if (m.DateUpdate > Model.DeleteChatTime || Model.DeleteChatTime == null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <p>Sender</p>
+                        </th>
+                        <th>
+                            <p>Recipient</p>
+                        </th>
+                        <th>
+                            <p>Message</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var msg in Model.Messages)
+                     {
+                        if (msg.DateUpdate > Model.DeleteChatTime || Model.DeleteChatTime == null)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(item => msg.SenderName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(item => msg.RecipientName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(item => msg.Message.Data)
+                                </td>
+                                <td>
+                                    @if (Model.FriendId == msg.RecipientId)
+                                     {
+                                        <a asp-controller="Message" asp-action="Edit" asp-route-id="@msg.Message.Id">Edit</a>
+                                        <a asp-controller="Message" asp-action="Delete" asp-route-id="@msg.Message.Id">Delete</a>
+                                     }
+                                </td>
+                            </tr>
+                        }
+                     }
+                </tbody>
+            </table>
+
+            break;
+
+        }
+    }
+ }
+ else
+ { 
+    <h2>You have no messages with this user.</h2>
+ }
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SendMessage">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="FriendId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">New message</label>
+                <input asp-for="NewMessage.Message.Data" class="form-control" />
+                <span asp-validation-for="NewMessage.Message.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Friends" asp-action="Index">Go to friends list</a>
+</div>

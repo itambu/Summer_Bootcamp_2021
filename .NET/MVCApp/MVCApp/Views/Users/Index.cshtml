@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVCApp.Models.UserViewModel>
+
+<h3>Users</h3>
+<hr />
+<div>
+    <a asp-controller="Users" asp-action="FindUser">Find user</a>
+</div>
+<br>
+@if (Model.Count() != 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                </th>
+            <tr/>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+            <tr>
+                <th>
+                    @Html.DisplayFor(u => user.UserName)
+                </th>
+                <th>
+                    @Html.DisplayFor(u => user.Email)
+                </th>
+                @if (user.isFriend)
+                {
+                    <th>
+                        <b>This user is your friend!</b>
+                    </th>
+                }
+                else
+                {
+                    <th>
+                        <a asp-controller="Friends" asp-action="SendRequest" asp-route-id="@user.Id">Add as Friend</a>
+                    </th>
+                }
+            </tr>
+            }
+        </tbody>
+
+
+    </table>
+}
+else
+{
+<h2>
+    User list is empty!
+</h2>
+}
